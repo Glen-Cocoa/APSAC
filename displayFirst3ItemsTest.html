@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+	</head>
+	<body>
+		<div class="item-b">
+			<div><button>click me1</button></div>
+			<div><button>click me2</button></div>
+			<div><button>click me3</button></div>
+			<div><button>click me4</button></div>
+			<div><button>click me5</button></div>
+			<div><button>click me6</button></div>
+			<div><button>click me7</button></div>
+			<div><button>click me8</button></div>
+			<div><button>click me9</button></div>
+			<div><button>click me10</button></div>
+			<div class="show more">Show More</div>
+			<div class="show less">Show Less</div>
+		</div>
+	</body>
+	<style>
+		/* Hide the show more/less divs */
+		.show {
+			display: none;
+			color: blue;
+		}
+
+		.show:hover {
+			cursor: pointer;
+		}
+
+		/* Hide 4th div and all the ones after it */
+		.item-b div:nth-child(n+4) {
+			display: none;
+		}
+	</style>
+
+	<script>
+		$(document).ready(function() {
+			var threshold = 3;
+
+			if ($("div.item-b").children().not(".show").length > threshold) {
+				$(".show.more").css("display", "block");
+			}
+
+
+			$(".show.more").on("click", function() {
+				$(this).parent().children().not(".show").css("display", "block");
+				$(this).parent().find(".show.less").css("display", "block");
+				$(this).hide();
+			});
+
+			$(".show.less").on("click", function() {
+				$(this).parent().children(":nth-child(n+" + (threshold + 1) + ")").not(".show").hide();
+				$(this).parent().find(".show.more").css("display", "block");
+				$(this).hide();
+			});
+
+		});
+		var buttonsArray = document.getElementsByClassName("button");
+		for(var buttonCounter = 0; buttonCounter < buttonArray.length; buttonCounter++)
+			{
+			console.log(buttonCounter);
+			buttonsArray[buttonCounter].onclick = function(e) {alert("A button has been clicked!")};
+			}
+//https://stackoverflow.com/questions/33419938/jquery-display-first-3-items-and-hide-the-rest-of-the-results-show-all-results
+	</script>
+
+</html>
