@@ -7,34 +7,68 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" type='text/css' href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script type='text/javascript' src='../lib/xlsx.full.min.js'></script>
-    <script type='text/javascript' src='../lib/parse.js'></script>
+    	<script type='text/javascript' src='../lib/parse.js'></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.js'></script>
 		<script type='text/javascript' src='../lib/TableCreator.js'></script>
+<!--		<script type='text/javascript' src='../lib/jayquery.js'></script>-->
 		<script type="text/javascript" src='../lib/JasonCheckboxes.js'></script>
 		<link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.css'>
-		<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.js'></script>
 	</head> 
-<body>
-	<div class='container'>
-		<div id="showData"></div>
-		<div class='queryboxContainer'></div>
-	</div>
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-</body>
-</body>
+	<body>
+		<div>
+			<table id="table" data-sort-name="States" data-sort-order="asc" data-search="true" data-pagination="true">
+				<tr>
+				<!--	<th data-field="Name of Program" data-sortable="true">Name of Program</th>-->
+					<th data-field="University name" data-sortable="true">University Name</th>
+				<!--	<th data-field="City" data-sortable="true">City</th>
+					<th data-field="State" data-sortable="true">State</th>-->
+				</tr>
+			</table>
+		</div>
+		<div class='container'>
+			<div id="showData"></div>
+			<div class='queryboxContainer'></div>
+		</div>
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  			<div class="modal-dialog" role="document">
+    			<div class="modal-content">
+      				<div class="modal-header">
+        				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        				<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      				</div>
+      				<div class="modal-body">
+        				...
+      				</div>
+      				<div class="modal-footer">
+        				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        				<button type="button" class="btn btn-primary">Save changes</button>
+      				</div>
+    			</div>
+  			</div>
+		</div>
+		<div>
+			<ul class='querybox' id ="states">
+				<li>States</li>
+		</div>
+		<div>
+			<ul id="types">
+				<li>Types</li>
+		</div>
+		<div>
+			<ul class='querybox' id="academic_departments">
+				<li>Academic Departments</li>
+		</div>
+		<div>
+			<ul class='querybox' id="degree_types">
+				<li>Degree Types</li>
+		</div>
+		<div>
+			<ul class='querybox' id="levels_of_study">
+				<li>Level of Study Availabe</li>
+		</div>
+		<div>
+			<ul class='querybox' id="study_options">
+				<li>Study Options</li>
+		</div>
+	</body>
 </html>
