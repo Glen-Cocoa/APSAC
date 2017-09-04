@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>Excel to Json</title>
-		<link rel='stylesheet' type='text/css' href='../Views/Basicstyle.css'>
+<!--		<link rel='stylesheet' type='text/css' href='../Views/Basicstyle.css'> -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" type='text/css' href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -10,19 +10,13 @@
     	<script type='text/javascript' src='../lib/parse.js'></script>
 		<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.js'></script>
 		<script type='text/javascript' src='../lib/TableCreator.js'></script>
-<!--		<script type='text/javascript' src='../lib/jayquery.js'></script>-->
+		<script type='text/javascript' src='../lib/jayquery.js'></script>
 		<script type="text/javascript" src='../lib/JasonCheckboxes.js'></script>
 		<link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.css'>
 	</head> 
 	<body>
 		<div>
-			<table id="table" data-sort-name="States" data-sort-order="asc" data-search="true" data-pagination="true">
-				<tr>
-				<!--	<th data-field="Name of Program" data-sortable="true">Name of Program</th>-->
-					<th data-field="University name" data-sortable="true">University Name</th>
-				<!--	<th data-field="City" data-sortable="true">City</th>
-					<th data-field="State" data-sortable="true">State</th>-->
-				</tr>
+			<table id="table" data-sort-name="States" data-sort-order="asc" data-search="true" data-pagination="true" data-card-view="false" data-striped="true" data-show-toggle="true">
 			</table>
 		</div>
 		<div class='container'>
