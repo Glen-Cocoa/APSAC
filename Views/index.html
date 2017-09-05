@@ -2,19 +2,18 @@
 <html>
 	<head>
 		<title>Excel to Json</title>
-    	<link rel='stylesheet' type='text/css' href='../Views/Basicstyle.css'>
-		<link rel='stylesheet' type='text/css' href='../Views/style.css'>
+<!--    	<link rel='stylesheet' type='text/css' href='../Views/Basicstyle.css'>
+		<link rel='stylesheet' type='text/css' href='../Views/style.css'> -->
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" ></script>
 		<script type='text/javascript' src='../lib/xlsx.full.min.js'></script>
     	<script type='text/javascript' src='../lib/parse.js'></script>
 		<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.js'></script>
 		<script type='text/javascript' src='../lib/TableCreator.js'></script>
-		<script type='text/javascript' src='../lib/jayquery.js'></script>
 		<script type="text/javascript" src='../lib/JasonCheckboxes.js'></script>
-		<script type='text/javascript' src='../lib/modCtrl.js'></script>
-		<script type='text/javascript' src='../lib/jayquery.js'></script>
+<!--		<script type='text/javascript' src='../lib/modCtrl.js'></script> -->
 		<link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.css'>
 	</head> 
 	<body>
@@ -24,15 +23,12 @@
 					<tr>
 						<th data-field="Name of Program" data-sortable="true">Name of Program</th>
 						<th data-field="University name" data-sortable="true">University Name</th>
+						<th data-field="Academic Department" data-sortable="true">Academic Department</th>
 						<th data-field="City" data-sortable="true">City</th>
 						<th data-field="State" data-sortable="true">State</th>
 					</tr>
 				<thead>
 			</table>
-		</div>
-		<div class='container'>
-			<div id="showData"></div>
-			<div class='queryboxContainer'></div>
 		</div>
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   			<div class="modal-dialog" role="document">
@@ -75,5 +71,10 @@
 			<ul class='querybox' id="study_options">
 				<li>Study Options</li>
 		</div>
+		<script>
+			$(function(){
+				bootstrap()
+				})
+		</script>
 	</body>
 </html>
