@@ -46,14 +46,19 @@ th {
     cursor: pointer;
 }
 
-#wrapper {
-     margin: 0 auto;
+#container {
+	margin: 0 auto;
+	position: relative;
+	background-color: #CBCBCB;
 }
-#leftcolumn, #rightcolumn {
-    border: 1px solid white;
-    float: left;
-    min-height: 450px;
-    color: white;
+.tableDiv{
+	float:left;
+}
+#banner{
+	margin:10px 0;
+  border:solid 1px #333;
+  padding:2px 4px;
+  font:15px Verdana;
 }
 .show {
 		display: none;
@@ -69,4 +74,17 @@ th {
 #banner{
   float: bottom;
   display: block;
+}
+.checkboxes{
+	float:left;
+}
+div.scrollmenu {
+			overflow: auto;
+			white-space: nowrap;
+}
+div.scrollmenu a {
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
 }
