@@ -9,6 +9,41 @@ th {
   background-color:#7f297d;
   color:White
   }
+body{
+	background-color: #CBCBCB;
+}
+#container {
+	float:left;
+}
+.checkboxDiv{
+	float:right;	
+}
+.querybox{
+	font-size: 0.8em;
+}
+.tableDiv{
+ float:right;
+}
+	/* Hide 4th div and all the ones after it */
+#states div:nth-child(n+5) {
+		display: none;
+	}
+#types div:nth-child(n+5) {
+		display: none;
+	}
+#academic_departments div:nth-child(n+5) {
+		display: none;
+	}
+#degree_types div:nth-child(n+3) {
+		display: none;
+	}
+#levels_of_study div:nth-child(n+3) {
+		display: none;
+	}
+#degree_options div:nth-child(n+3) {
+		display: none;
+	}
+
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -44,47 +79,4 @@ th {
     color: black;
     text-decoration: none;
     cursor: pointer;
-}
-
-#container {
-	margin: 0 auto;
-	position: relative;
-	background-color: #CBCBCB;
-}
-.tableDiv{
-	float:left;
-}
-#banner{
-	margin:10px 0;
-  border:solid 1px #333;
-  padding:2px 4px;
-  font:15px Verdana;
-}
-.show {
-		display: none;
-		color: blue;
-	}
-.show:hover {
-		cursor: pointer;
-	}
-		/* Hide 4th div and all the ones after it */
-#states div:nth-child(n+5) {
-		display: none;
-	}
-#banner{
-  float: bottom;
-  display: block;
-}
-.checkboxes{
-	float:left;
-}
-div.scrollmenu {
-			overflow: auto;
-			white-space: nowrap;
-}
-div.scrollmenu a {
-    color: white;
-    text-align: center;
-    padding: 14px;
-    text-decoration: none;
 }
