@@ -6,6 +6,8 @@
         }
         th {
           font-weight:bold;
+		  background-color:#7f297d;
+		  color:White
         }
         #showData{
           float:left;
