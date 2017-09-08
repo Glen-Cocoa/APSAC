@@ -34,7 +34,7 @@ body{
 #academic_departments div:nth-child(n+5) {
 		display: none;
 	}
-#degree_types div:nth-child(n+3) {
+#degree_types div:nth-child(n+5) {
 		display: none;
 	}
 #levels_of_study div:nth-child(n+3) {
