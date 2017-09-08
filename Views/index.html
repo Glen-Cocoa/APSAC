@@ -2,28 +2,26 @@
 <html>
 	<head>
 		<title>Excel to Json</title>
-
-		<link rel='stylesheet' type='text/css' href='../Views/Basicstyle.css'>
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" ></script>
-		<script type='text/javascript' src='../lib/xlsx.full.min.js'></script>
-		<script type='text/javascript' src='../lib/parse.js'></script>
 		<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.js'></script>
+		<script type='text/javascript' src='../lib/xlsx.full.min.js'></script>
+		<link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.css'>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<script type='text/javascript' src='../lib/parse.js'></script>
 		<script type='text/javascript' src='../lib/TableCreator.js'></script>
 		<script type="text/javascript" src='../lib/JasonCheckboxes.js'></script>
 <!--<script type='text/javascript' src='../lib/modCtrl.js'></script> -->
-		<link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.css'>
 		<link rel='stylesheet' type='text/css' href='../Views/Basicstyle.css'>
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	</head> 
 	<body>
 		<div id="message">
 			Loading, please wait...
 		</div>
-		<div id="container" style="display:none">
-			<div id='row' class="table-responsive col-md-10">
+		<div id="container" class='container-fluid' style="display:none">
+			<div id='row' class="table-responsive col-md-10, tableDiv">
 				<table id="table" data-sort-name="Name of Program" data-sort-order="asc" data-search="true" data-pagination="true" data-card-view="true" data-striped="true" data-show-toggle="true" data-show-export="true" data-export-types="['excel','pdf']">
 					<thead>
 						<tr>
@@ -34,35 +32,20 @@
 							<th data-field="State" data-sortable="true">State</th>
 						</tr>
 					</thead>
-				</table>
+			</table>
+				<h5 id='banner'>
+					"All information in this report has been provided by the institution.  Inclusion in this directory does not imply endorsement by APSAC."
+				<img src='../lib/logosmall(2).jpg'>
+				</h5>
 			</div>
-			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-				<div class="modal-dialog" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-							<h4 class="modal-title" id="myModalLabel">Modal title</h4>
-						</div>
-						<div class="modal-body">
-							...
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-							<button type="button" class="btn btn-primary">Save changes</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		<div id='container-fluid'>
-					<div class='row'>
-						<div class="table-responsive col-md-2">
-		<div id='divStates'>
+		<div class='row, table-responsive col-md-2, checkboxes'>
+		<div id='divStates, scrollmenu'>
 			<ul class='querybox' id ="states">
 				<h3>
 					States
 				</h3>
 			</ul>
-				<button>
+				<button id='stateButton'>
 					Show/Hide States
 				</button>
 			</div>
@@ -106,17 +89,29 @@
 					Show/Hide Study Options
 				</button>
 		</div>
-			</div>
 		</div>
-				<h5 id='banner'>
-					"All information in this report has been provided by the institution.  Inclusion in this directory does not imply endorsement by APSAC."
-					<img src='../lib/logosmall(2).jpg'>
-				</h5>
+			</div>
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+						</div>
+						<div class="modal-body">
+							...
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							<button type="button" class="btn btn-primary">Save changes</button>
+						</div>
+					</div>
+				</div>
 			</div>
 		<script>
 			$(function(){
 				bootstrap()
-        $("#message").hide()
+				$("#message").hide()
 				$("#container").show()
 				showBoxes()
 				})

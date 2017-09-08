@@ -21,7 +21,6 @@
     "jquery": "3.0.0",
     "popper.js": "1.11.0"
     "underscore": "^1.8.3",
-    "xmlhttprequest": "^1.8.0"
   },
   "bugs": {
     "url": "https://github.com/Glen-Cocoa/apsac/issues"
