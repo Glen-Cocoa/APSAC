@@ -11,8 +11,15 @@
 		<script type='text/javascript' src='../lib/xlsx.full.min.js'></script>
 		<script type='text/javascript' src='../lib/parse.js'></script>
 		<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.js'></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/extensions/export/bootstrap-table-export.js"></script>
+		<script type="text/javascript" src="../node_modules/tableexport.jquery.plugin/libs/FileSaver/FileSaver.min.js"></script>
+		<script type="text/javascript" src="../node_modules/tableexport.jquery.plugin/libs/js-xlsx/xlsx.core.min.js"></script>
+		<script type="text/javascript" src="../node_modules/tableexport.jquery.plugin/libs/jsPDF/jspdf.min.js"></script>
+		<script type="text/javascript" src="../node_modules/tableexport.jquery.plugin/libs/jsPDF-AutoTable/jspdf.plugin.autotable.js"></script>
+		<script type="text/javascript" src="../node_modules/tableexport.jquery.plugin/tableExport.min.js"></script>
 		<script type='text/javascript' src='../lib/TableCreator.js'></script>
 		<script type="text/javascript" src='../lib/JasonCheckboxes.js'></script>
+		<script type="text/javascript" src="../lib/table_functions.js"></script>
 <!--<script type='text/javascript' src='../lib/modCtrl.js'></script> -->
 		<link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.css'>
 		<link rel='stylesheet' type='text/css' href='../Views/Basicstyle.css'>
@@ -24,7 +31,11 @@
 		</div>
 		<div id="container" style="display:none">
 			<div id='row' class="table-responsive col-md-10">
-				<table id="table" data-sort-name="Name of Program" data-sort-order="asc" data-search="true" data-pagination="true" data-card-view="true" data-striped="true" data-show-toggle="true" data-show-export="true" data-export-types="['excel','pdf']">
+				<div id="toolbar">
+					<button id="export-excel" class="btn btn-default">Export to Excel</button>
+					<button id="export-pdf" class="btn btn-default">Export to PDF</button>
+				</div>
+				<table id="table" data-sort-name="Name of Program" data-sort-order="asc" data-toolbar="#toolbar" data-search="true" data-pagination="true" data-card-view="true" data-striped="true" data-show-toggle="true" data-show-export="true" data-export-types="['excel','pdf']">
 					<thead>
 						<tr>
 							<th data-field="Name of Program" data-sortable="true">Name of Program</th>
