@@ -7,16 +7,6 @@
         th {
           font-weight:bold;
         }
-        #showData{
-          float:left;
-          display: inline-block;
-          vertical-align: top
-        }
-        .queryboxContainer{
-          float:left;
-          display: inline-block;
-          vertical-align: top
-        }
 .modal {
    display: none; /* Hidden by default */
    position: fixed; /* Stay in place */
@@ -52,4 +42,28 @@
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+#wrapper {
+     margin: 0 auto;
+}
+#leftcolumn, #rightcolumn {
+    border: 1px solid white;
+    float: left;
+    min-height: 450px;
+    color: white;
+}
+.show {
+		display: none;
+		color: blue;
+	}
+.show:hover {
+		cursor: pointer;
+	}
+		/* Hide 4th div and all the ones after it */
+#states div:nth-child(n+5) {
+		display: none;
+	}
+#banner{
+  float: bottom;
+  display: block;
 }

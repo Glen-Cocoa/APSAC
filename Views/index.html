@@ -2,8 +2,7 @@
 <html>
 	<head>
 		<title>Excel to Json</title>
-<!--    	<link rel='stylesheet' type='text/css' href='../Views/Basicstyle.css'>
-		<link rel='stylesheet' type='text/css' href='../Views/style.css'> -->
+		<!-- <link rel='stylesheet' type='text/css' href='../Views/style.css'> -->
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
@@ -15,10 +14,66 @@
 		<script type="text/javascript" src='../lib/JasonCheckboxes.js'></script>
 <!--		<script type='text/javascript' src='../lib/modCtrl.js'></script> -->
 		<link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.css'>
+		<link rel='stylesheet' type='text/css' href='../Views/Basicstyle.css'>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	</head> 
 	<body>
+		<div id='container-fluid'>
+					<div class='row'>
+						<div class="table-responsive col-md-2">
+		<div id='divStates'>
+			<ul class='querybox' id ="states">
+				<h3>
+					States
+				</h3>
+			</ul>
+				<button>
+					Show/Hide States
+				</button>
+			</div>
 		<div>
-			<table id="table" data-sort-name="States" data-sort-order="asc" data-search="true" data-pagination="true" data-card-view="true" data-striped="true" data-show-toggle="true">
+			<ul id="types">
+				<h3>Types</h3>
+			</ul>
+				<button>
+					Show/Hide Types
+				</button>
+		</div>
+		<div>
+			<ul class='querybox' id="academic_departments">
+				<h3>Academic Departments</h3>
+			</ul>
+				<button>
+					Show/Hide Departments
+				</button>
+		</div>
+		<div>
+			<ul class='querybox' id="degree_types">
+				<h3>Degree Types</h3>
+							</ul>
+				<button>
+					Show/Hide Degree Types
+				</button>
+		</div>
+		<div>
+			<ul class='querybox' id="levels_of_study">
+				<h3>Level of Study Availabe</h3>
+							</ul>
+				<button>
+					Show/Hide Level of Study
+				</button>
+		</div>
+		<div>
+			<ul class='querybox' id="study_options">
+				<h3>Study Options</h3>
+							</ul>
+				<button>
+					Show/Hide Study Options
+				</button>
+		</div>
+			</div>
+		<div id='row' class="table-responsive col-md-10">
+			<table id="table" data-sort-name="States" data-sort-order="asc" data-search="true" data-pagination="true" data-card-view="true" data-striped="true" data-show-toggle="true" align='right'>
 				<thead>
 					<tr>
 						<th data-field="Name of Program" data-sortable="true">Name of Program</th>
@@ -27,7 +82,7 @@
 						<th data-field="City" data-sortable="true">City</th>
 						<th data-field="State" data-sortable="true">State</th>
 					</tr>
-				<thead>
+				</thead>
 			</table>
 		</div>
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -47,33 +102,15 @@
     			</div>
   			</div>
 		</div>
-		<div>
-			<ul class='querybox' id ="states">
-				<li>States</li>
-		</div>
-		<div>
-			<ul id="types">
-				<li>Types</li>
-		</div>
-		<div>
-			<ul class='querybox' id="academic_departments">
-				<li>Academic Departments</li>
-		</div>
-		<div>
-			<ul class='querybox' id="degree_types">
-				<li>Degree Types</li>
-		</div>
-		<div>
-			<ul class='querybox' id="levels_of_study">
-				<li>Level of Study Availabe</li>
-		</div>
-		<div>
-			<ul class='querybox' id="study_options">
-				<li>Study Options</li>
-		</div>
+				<h5 id='banner'>
+					"All information in this report has been provided by the institution.  Inclusion in this directory does not imply endorsement by APSAC."
+					<img src='../lib/logosmall(2).jpg'>
+				</h5>
+			</div>
 		<script>
 			$(function(){
 				bootstrap()
+				showBoxes()
 				})
 		</script>
 	</body>
