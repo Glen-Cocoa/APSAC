@@ -32,12 +32,14 @@
 					<button id="export-excel" class="btn btn-default">Export to Excel</button>
 					<button id="export-pdf" class="btn btn-default">Export to PDF</button>
 				</div>
-				<table id="table" data-sort-name="Name of Program" data-sort-order="asc" data-toolbar="#toolbar" data-search="true" data-pagination="true" data-card-view="true" data-striped="true" data-show-toggle="true" data-show-export="true" data-export-types="['excel','pdf']">
+				<table id="table" data-sort-name="Name of Program" data-sort-order="asc" data-toolbar="#toolbar" data-search="true" data-pagination="true" data-card-view="true" data-striped="true" data-show-toggle="true" data-export-types="['excel','pdf']" data-click-to-select="true" data-detail-view="true" data-detail-formatter="detailFormatter">
 					<thead>
 						<tr>
+							<th data-checkbox="true"></th>
 							<th data-field="Name of Program" data-sortable="true">Name of Program</th>
 							<th data-field="University name" data-sortable="true">University Name</th>
 							<th data-field="Academic Department" data-sortable="true">Academic Department</th>
+							<th data-field="Degree/Certificate Earned" data-sortable="true">Degree Earned</th>
 							<th data-field="City" data-sortable="true">City</th>
 							<th data-field="State" data-sortable="true">State</th>
 						</tr>
@@ -83,7 +85,7 @@
 		</div>
 		<div>
 			<ul class='querybox' id="levels_of_study">
-				<h3>Level of Study Availabe</h3>
+				<h3>Level of Study Available</h3>
 							</ul>
 				<button>
 					Show/Hide Level of Study
