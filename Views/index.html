@@ -20,6 +20,7 @@
 		<script type='text/javascript' src='../lib/TableCreator.js'></script>
 		<script type="text/javascript" src='../lib/JasonCheckboxes.js'></script>
 		<script type="text/javascript" src="../lib/table_functions.js"></script>
+		<script type="text/javascript" src="../lib/peanutButterBanana.js"></script>
 		<link rel='stylesheet' type='text/css' href='../Views/Basicstyle.css'>
 	</head> 
 	<body>
@@ -55,69 +56,51 @@
 			<ul class='querybox' id ="states">
 				<h3>States</h3>
 			</ul>
-				<button id='stateButton' onclick='toggleBox()'>
-					Show/Hide States
+				<button id='stateButton' onclick='toggleBox("states")'>
+					Filter by States
 				</button>
 			</div>
 		<div>
 			<ul class='querybox' id="types">
 				<h3>Types</h3>
 			</ul>
-				<button>
-					Show/Hide Types
+				<button onclick='toggleBox("types")'>
+					Filter by Types
 				</button>
 		</div>
 		<div>
 			<ul class='querybox' id="academic_departments">
 				<h3>Academic Departments</h3>
 			</ul>
-				<button>
-					Show/Hide Departments
+				<button onclick='toggleBox("academic_departments")'>
+					Filter by Departments
 				</button>
 		</div>
 		<div>
 			<ul class='querybox' id="degree_types">
 				<h3>Degree Types</h3>
 							</ul>
-				<button>
-					Show/Hide Degree Types
+				<button onclick='toggleBox("degree_types")'>
+					Filter by Degree Types
 				</button>
 		</div>
 		<div>
 			<ul class='querybox' id="levels_of_study">
 				<h3>Level of Study Available</h3>
 							</ul>
-				<button>
-					Show/Hide Level of Study
+				<button onclick='toggleBox("levels_of_study")'>
+					Filter by Level of Study
 				</button>
 		</div>
 		<div>
 			<ul class='querybox' id="study_options">
 				<h3>Study Options</h3>
 							</ul>
-				<button>
-					Show/Hide Study Options
+				<button onclick='toggleBox("study_options")'>
+					Filter by Study Options
 				</button>
 		</div>
 		</div>
-			</div>
-			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-				<div class="modal-dialog" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-							<h4 class="modal-title" id="myModalLabel">Modal title</h4>
-						</div>
-						<div class="modal-body">
-							...
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-							<button type="button" class="btn btn-primary">Save changes</button>
-						</div>
-					</div>
-				</div>
-			</div>
 		<script>
 			$(function(){
 				bootstrap()

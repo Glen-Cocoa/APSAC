@@ -12,11 +12,15 @@ th {
 body{
 	background-color: #CBCBCB;
 }
+#banner{
+	font-style:italic;
+}
 #container {
 	float:left;
 }
 .checkboxDiv{
-	float:right;	
+	float:right;
+	max-height: 1090px;
 }
 .querybox{
 	font-size: 0.8em;
@@ -25,6 +29,10 @@ body{
  float:right;
 }
 	/* Hide 4th div and all the ones after it */
+ul{
+	display:none;
+}
+/*
 #states div:nth-child(n+5) {
 		display: none;
 	}
@@ -37,12 +45,13 @@ body{
 #degree_types div:nth-child(n+5) {
 		display: none;
 	}
-#levels_of_study div:nth-child(n+3) {
+#levels_of_study div:nth-child(n+5) {
 		display: none;
 	}
-#degree_options div:nth-child(n+3) {
+#degree_options div:nth-child(n+5) {
 		display: none;
 	}
+*/
 
 .modal {
   display: none; /* Hidden by default */
