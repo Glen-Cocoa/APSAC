@@ -2,78 +2,105 @@
 <html>
 	<head>
 		<title>Excel to Json</title>
-<!--    	<link rel='stylesheet' type='text/css' href='../Views/Basicstyle.css'>
-		<link rel='stylesheet' type='text/css' href='../Views/style.css'> -->
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" ></script>
-		<script type='text/javascript' src='../lib/xlsx.full.min.js'></script>
-    	<script type='text/javascript' src='../lib/parse.js'></script>
 		<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.js'></script>
+		<script type='text/javascript' src='../lib/xlsx.full.min.js'></script>
+		<link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.css'>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<script type='text/javascript' src='../lib/parse.js'></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/extensions/export/bootstrap-table-export.js"></script>
+		<script type="text/javascript" src="../node_modules/tableexport.jquery.plugin/libs/FileSaver/FileSaver.min.js"></script>
+		<script type="text/javascript" src="../node_modules/tableexport.jquery.plugin/libs/js-xlsx/xlsx.core.min.js"></script>
+		<script type="text/javascript" src="../node_modules/tableexport.jquery.plugin/libs/jsPDF/jspdf.min.js"></script>
+		<script type="text/javascript" src="../node_modules/tableexport.jquery.plugin/libs/jsPDF-AutoTable/jspdf.plugin.autotable.js"></script>
+		<script type="text/javascript" src="../node_modules/tableexport.jquery.plugin/tableExport.min.js"></script>
 		<script type='text/javascript' src='../lib/TableCreator.js'></script>
 		<script type="text/javascript" src='../lib/JasonCheckboxes.js'></script>
-<!--		<script type='text/javascript' src='../lib/modCtrl.js'></script> -->
-		<link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.css'>
+		<script type="text/javascript" src="../lib/table_functions.js"></script>
+		<script type="text/javascript" src="../lib/peanutButterBanana.js"></script>
+		<link rel='stylesheet' type='text/css' href='../Views/Basicstyle.css'>
 	</head> 
 	<body>
-		<div>
-			<table id="table" data-sort-name="States" data-sort-order="asc" data-search="true" data-pagination="true" data-card-view="true" data-striped="true" data-show-toggle="true">
-				<thead>
-					<tr>
-						<th data-field="Name of Program" data-sortable="true">Name of Program</th>
-						<th data-field="University name" data-sortable="true">University Name</th>
-						<th data-field="Academic Department" data-sortable="true">Academic Department</th>
-						<th data-field="City" data-sortable="true">City</th>
-						<th data-field="State" data-sortable="true">State</th>
-					</tr>
-				<thead>
+		<div id="message">
+			Loading, please wait...
+		</div>
+		<div id="container" style="display:none" class="container-fluid">
+			<div id='row' class="table-responsive col-md-10, tableDiv">
+				<div id="toolbar">
+					<button id="export-excel" class="btn btn-default">Export to Excel</button>
+					<button id="export-pdf" class="btn btn-default">Export to PDF</button>
+				</div>
+				<table id="table" data-toolbar="#toolbar" data-detail-formatter="detailFormatter" data-sort-name="Name of Program" data-sort-order="asc" data-toolbar="#toolbar" data-search="true" data-pagination="true" data-card-view="true" data-striped="true" data-show-toggle="true" data-export-types="['excel','pdf']" data-click-to-select="true" data-detail-view="true" data-detail-formatter="detailFormatter">
+					<thead>
+						<tr>
+							<th data-checkbox="true"></th>
+							<th data-field="Name of Program" data-sortable="true">Name of Program</th>
+							<th data-field="University name" data-sortable="true">University Name</th>
+							<th data-field="Academic Department" data-sortable="true">Academic Department</th>
+							<th data-field="Degree/Certificate Earned" data-sortable="true">Degree Earned</th>
+							<th data-field="City" data-sortable="true">City</th>
+							<th data-field="State" data-sortable="true">State</th>
+						</tr>
+					</thead>
 			</table>
-		</div>
-		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  			<div class="modal-dialog" role="document">
-    			<div class="modal-content">
-      				<div class="modal-header">
-        				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        				<h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      				</div>
-      				<div class="modal-body">
-        				...
-      				</div>
-      				<div class="modal-footer">
-        				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        				<button type="button" class="btn btn-primary">Save changes</button>
-      				</div>
-    			</div>
-  			</div>
-		</div>
+				<h5 id='banner'>
+					"All information in this report has been provided by the institution.  Inclusion in this directory does not imply endorsement by APSAC."
+				</h5>
+			</div>
+		<div id='row' class='table-responsive col-md-2, checkboxDiv'>
+			<img src='../lib/logosmall(2).jpg'>
 		<div>
+				<button id='stateButton' onclick='toggleBox("states")'>
+					Filter by States
+				</button>
 			<ul class='querybox' id ="states">
-				<li>States</li>
+			</ul>
+			</div>
+		<div>
+				<button onclick='toggleBox("types")'>
+					Filter by Types
+				</button>
+			<ul class='querybox' id="types">
+			</ul>
 		</div>
 		<div>
-			<ul id="types">
-				<li>Types</li>
-		</div>
-		<div>
+				<button onclick='toggleBox("academic_departments")'>
+					Filter by Departments
+				</button>
 			<ul class='querybox' id="academic_departments">
-				<li>Academic Departments</li>
+			</ul>
 		</div>
 		<div>
+				<button onclick='toggleBox("degree_types")'>
+					Filter by Degree Types
+				</button>
 			<ul class='querybox' id="degree_types">
-				<li>Degree Types</li>
+			</ul>
 		</div>
 		<div>
+				<button onclick='toggleBox("levels_of_study")'>
+					Filter by Level of Study
+				</button>
 			<ul class='querybox' id="levels_of_study">
-				<li>Level of Study Availabe</li>
+			</ul>
 		</div>
 		<div>
+				<button onclick='toggleBox("study_options")'>
+					Filter by Study Options
+				</button>
 			<ul class='querybox' id="study_options">
-				<li>Study Options</li>
+			</ul>
+		</div>
 		</div>
 		<script>
 			$(function(){
 				bootstrap()
+				$("#message").hide()
+				$("#container").show()
+				showBoxes()
 				})
 		</script>
 	</body>
