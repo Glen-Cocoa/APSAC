@@ -17,6 +17,7 @@ body{
 }
 #container {
 	float:left;
+	position:absolute;
 }
 .checkboxDiv{
 	float:right;
@@ -27,6 +28,7 @@ body{
 }
 .tableDiv{
  float:right;
+ max-width:75%;
 }
 	/* Hide 4th div and all the ones after it */
 ul{

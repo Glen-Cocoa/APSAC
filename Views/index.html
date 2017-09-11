@@ -33,7 +33,7 @@
 					<button id="export-excel" class="btn btn-default">Export to Excel</button>
 					<button id="export-pdf" class="btn btn-default">Export to PDF</button>
 				</div>
-				<table id="table" data-sort-name="Name of Program" data-sort-order="asc" data-toolbar="#toolbar" data-search="true" data-pagination="true" data-card-view="true" data-striped="true" data-show-toggle="true" data-export-types="['excel','pdf']" data-click-to-select="true" data-detail-view="true" data-detail-formatter="detailFormatter">
+				<table id="table" data-toolbar="#toolbar" data-detail-formatter="detailFormatter" data-sort-name="Name of Program" data-sort-order="asc" data-toolbar="#toolbar" data-search="true" data-pagination="true" data-card-view="true" data-striped="true" data-show-toggle="true" data-export-types="['excel','pdf']" data-click-to-select="true" data-detail-view="true" data-detail-formatter="detailFormatter">
 					<thead>
 						<tr>
 							<th data-checkbox="true"></th>
@@ -48,57 +48,51 @@
 			</table>
 				<h5 id='banner'>
 					"All information in this report has been provided by the institution.  Inclusion in this directory does not imply endorsement by APSAC."
-				<img src='../lib/logosmall(2).jpg'>
 				</h5>
 			</div>
 		<div id='row' class='table-responsive col-md-2, checkboxDiv'>
+			<img src='../lib/logosmall(2).jpg'>
 		<div>
-			<ul class='querybox' id ="states">
-				<h3>States</h3>
-			</ul>
 				<button id='stateButton' onclick='toggleBox("states")'>
 					Filter by States
 				</button>
+			<ul class='querybox' id ="states">
+			</ul>
 			</div>
 		<div>
-			<ul class='querybox' id="types">
-				<h3>Types</h3>
-			</ul>
 				<button onclick='toggleBox("types")'>
 					Filter by Types
 				</button>
+			<ul class='querybox' id="types">
+			</ul>
 		</div>
 		<div>
-			<ul class='querybox' id="academic_departments">
-				<h3>Academic Departments</h3>
-			</ul>
 				<button onclick='toggleBox("academic_departments")'>
 					Filter by Departments
 				</button>
+			<ul class='querybox' id="academic_departments">
+			</ul>
 		</div>
 		<div>
-			<ul class='querybox' id="degree_types">
-				<h3>Degree Types</h3>
-							</ul>
 				<button onclick='toggleBox("degree_types")'>
 					Filter by Degree Types
 				</button>
+			<ul class='querybox' id="degree_types">
+			</ul>
 		</div>
 		<div>
-			<ul class='querybox' id="levels_of_study">
-				<h3>Level of Study Available</h3>
-							</ul>
 				<button onclick='toggleBox("levels_of_study")'>
 					Filter by Level of Study
 				</button>
+			<ul class='querybox' id="levels_of_study">
+			</ul>
 		</div>
 		<div>
-			<ul class='querybox' id="study_options">
-				<h3>Study Options</h3>
-							</ul>
 				<button onclick='toggleBox("study_options")'>
 					Filter by Study Options
 				</button>
+			<ul class='querybox' id="study_options">
+			</ul>
 		</div>
 		</div>
 		<script>
