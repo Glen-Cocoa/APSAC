@@ -4,6 +4,15 @@ table, th, td {
   padding:2px 4px;
   font:15px Verdana;
   }
+a{
+	background-color:white;
+}
+.btn-primary{
+	background-color:#7F297D;
+}
+.smallLogo{
+	padding-bottom:10px;
+}
 th {
   font-weight:bold;
   background-color:#7f297d;
@@ -16,17 +25,20 @@ body{
 	font-style:italic;
 }
 #container {
-	float:left;
 	position:absolute;
+	width: 1004px; 
 }
 .checkboxDiv{
 	float:right;
-	max-height: 1090px;
+	padding: 10px;
+	max-height: 800px;
+	position: fixed;
 }
 .querybox{
 	font-size: 0.8em;
 }
 .tableDiv{
+ padding: 10px;
  float:right;
  max-width:75%;
 }
