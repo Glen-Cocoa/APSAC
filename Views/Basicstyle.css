@@ -4,12 +4,6 @@ table, th, td {
   padding:2px 4px;
   font:15px Verdana;
   }
-#iframe{
-	position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -100px 0 0 -150px;
-}
 a{
 	background-color:white;
 }
@@ -36,11 +30,9 @@ body{
 
 #container {
 	position:absolute;
-	width: 1004px; 
+	width: 100%; 
 }
-
 .checkboxDiv{
-	float:right;
 	padding: 10px;
 	max-height: 800px;
 	position: fixed;
@@ -53,7 +45,8 @@ body{
 .tableDiv{
  padding: 10px;
  float:right;
- max-width:75%;
+ max-width:76%;
+ position: relative 20px right;
 }
 
 ul{
