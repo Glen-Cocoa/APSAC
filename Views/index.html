@@ -17,6 +17,7 @@
 		<script type="text/javascript" src="../node_modules/tableexport.jquery.plugin/libs/jsPDF/jspdf.min.js"></script>
 		<script type="text/javascript" src="../node_modules/tableexport.jquery.plugin/libs/jsPDF-AutoTable/jspdf.plugin.autotable.js"></script>
 		<script type="text/javascript" src="../node_modules/tableexport.jquery.plugin/tableExport.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/extensions/multiple-search/bootstrap-table-multiple-search.js"></script>
 		<script type='text/javascript' src='../lib/TableCreator.js'></script>
 		<script type="text/javascript" src='../lib/JasonCheckboxes.js'></script>
 		<script type="text/javascript" src="../lib/table_functions.js"></script>
@@ -34,7 +35,7 @@
 					<button id="export-excel" class="btn btn-primary">Export to Excel</button>
 					<button id="export-pdf" class="btn btn-primary">Export to PDF</button>
 				</div>
-				<table id="table" data-toolbar="#toolbar" data-detail-formatter="detailFormatter" data-sort-name="Name of Program" data-sort-order="asc" data-toolbar="#toolbar" data-search="true" data-pagination="true" data-card-view="true" data-striped="true" data-show-toggle="true" data-export-types="['excel','pdf']" data-click-to-select="true" data-detail-view="true" data-detail-formatter="detailFormatter">
+				<table id="table" data-toolbar="#toolbar" data-detail-formatter="detailFormatter" data-sort-name="Name of Program" data-sort-order="asc" data-toolbar="#toolbar" data-search="true" data-pagination="true" data-card-view="true" data-striped="true" data-show-toggle="true" data-export-types="['excel','pdf']" data-click-to-select="true" data-detail-view="true" data-detail-formatter="detailFormatter" data-multiple-search="true">
 					<thead>
 						<tr>
 							<th data-checkbox="true"></th>
@@ -42,6 +43,7 @@
 							<th data-field="University name" data-sortable="true">University Name</th>
 							<th data-field="City" data-sortable="true">City</th>
 							<th data-field="State" data-sortable="true">State</th>
+							<th data-field="School Type" data-visible="false" data-card-visible="true">School Type</th>
 							<th data-field="Academic Department" data-sortable="true" data-visible='false'>Academic Department</th>
 							<th data-field="Degree/Certificate Earned" data-sortable="true" data-visible='false'>Degree Earned</th>
 							<th data-field="Program Description" data-sortable="true" data-visible='false'>Program Description</th>
