@@ -4,6 +4,11 @@ table, th, td {
   padding:2px 4px;
   font:15px Verdana;
   }
+td{
+	max-width:200px;
+	word-wrap: normal;
+	white-space: normal;
+}
 a{
 	background-color:white;
 }
@@ -30,11 +35,9 @@ body{
 
 #container {
 	position:absolute;
-	width: 1004px; 
+	width: 100%; 
 }
-
 .checkboxDiv{
-	float:right;
 	padding: 10px;
 	max-height: 800px;
 	position: fixed;
@@ -47,7 +50,8 @@ body{
 .tableDiv{
  padding: 10px;
  float:right;
- max-width:75%;
+ max-width:76%;
+ position: relative 20px right;
 }
 
 ul{
