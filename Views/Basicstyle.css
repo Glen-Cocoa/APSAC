@@ -27,7 +27,8 @@ a{
 	width:120px;
 }
 .buttonDiv{
-	padding:2px;	
+	padding:2px;
+	max-width:0px;
 }
 .btn-primary:hover{
  background-color: #FFFFFF; background-image: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#000000));
