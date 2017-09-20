@@ -11,12 +11,16 @@
 		<link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.css'>
 		<script type='text/javascript' src='../lib/excel_data_module.js'></script>
 		<script type='text/javascript' src='../lib/app.js'></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/extensions/export/bootstrap-table-export.js"></script>
-		<script type="text/javascript" src="../node_modules/tableexport.jquery.plugin/libs/FileSaver/FileSaver.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.3/FileSaver.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.11.3/xlsx.core.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.2/jspdf.plugin.autotable.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/TableExport/4.0.11/js/tableexport.min.js"></script>
+<!--		<script type="text/javascript" src="../node_modules/tableexport.jquery.plugin/libs/FileSaver/FileSaver.min.js"></script>
 		<script type="text/javascript" src="../node_modules/tableexport.jquery.plugin/libs/js-xlsx/xlsx.core.min.js"></script>
 		<script type="text/javascript" src="../node_modules/tableexport.jquery.plugin/libs/jsPDF/jspdf.min.js"></script>
 		<script type="text/javascript" src="../node_modules/tableexport.jquery.plugin/libs/jsPDF-AutoTable/jspdf.plugin.autotable.js"></script>
-		<script type="text/javascript" src="../node_modules/tableexport.jquery.plugin/tableExport.min.js"></script>
+		<script type="text/javascript" src="../node_modules/tableexport.jquery.plugin/tableExport.min.js"></script>-->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/extensions/multiple-search/bootstrap-table-multiple-search.js"></script>
 		<script type="text/javascript" src='../lib/JasonCheckboxes.js'></script>
 		<script type="text/javascript" src="../lib/table_functions.js"></script>
@@ -30,8 +34,7 @@
 			<div id='row' class="table-responsive col-md-10, tableDiv">
 				<div class='btn-group' id="toolbar">
 					<button id='clear-search' class='btn btn-primary toolbarBtn'>Reset Search</button>
-					<button id="export-excel" class="btn btn-primary toolbarBtn">Export to Excel</button>
-					<button id="export-pdf" class="btn btn-primary toolbarBtn">Export to PDF</button>
+					<button id="export" class="btn btn-primary toolbarBtn">Export</button>
 					<!--<button href="https://www.facebook.com/sharer/sharer.php?u=https://www.apsac.org/test-page" target="_blank" class="fa fa-facebook btn btn-primary toolbarBtn"></button>
 					<button href="https://www.twitter.com/share" class="fa fa-twitter btn btn-primary toolbarBtn"></button>
 					<button href="https:///www.linkedin.com/share" class="fa fa-linkedin btn btn-primary toolbarBtn"></button>
