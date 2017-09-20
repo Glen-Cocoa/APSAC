@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Excel to Json</title>
@@ -9,7 +9,8 @@
 		<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.js'></script>
 		<script type='text/javascript' src='../lib/xlsx.full.min.js'></script>
 		<link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.css'>
-		<script type='text/javascript' src='../lib/parse.js'></script>
+		<script type='text/javascript' src='../lib/excel_data_module.js'></script>
+		<script type='text/javascript' src='../lib/app.js'></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/extensions/export/bootstrap-table-export.js"></script>
 		<script type="text/javascript" src="../node_modules/tableexport.jquery.plugin/libs/FileSaver/FileSaver.min.js"></script>
 		<script type="text/javascript" src="../node_modules/tableexport.jquery.plugin/libs/js-xlsx/xlsx.core.min.js"></script>
@@ -17,7 +18,6 @@
 		<script type="text/javascript" src="../node_modules/tableexport.jquery.plugin/libs/jsPDF-AutoTable/jspdf.plugin.autotable.js"></script>
 		<script type="text/javascript" src="../node_modules/tableexport.jquery.plugin/tableExport.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/extensions/multiple-search/bootstrap-table-multiple-search.js"></script>
-		<script type='text/javascript' src='../lib/TableCreator.js'></script>
 		<script type="text/javascript" src='../lib/JasonCheckboxes.js'></script>
 		<script type="text/javascript" src="../lib/table_functions.js"></script>
 		<link rel='stylesheet' type='text/css' href='../Views/Basicstyle.css'>
@@ -29,23 +29,27 @@
 		<div id="container" style="display:none" class="container">
 			<div id='row' class="table-responsive col-md-10, tableDiv">
 				<div class='btn-group' id="toolbar">
-					<button id='clear-search' class='btn btn-primary'>Reset Search</button>
-					<button id="export-excel" class="btn btn-primary">Export to Excel</button>
-					<button id="export-pdf" class="btn btn-primary">Export to PDF</button>
+					<button id='clear-search' class='btn btn-primary toolbarBtn'>Reset Search</button>
+					<button id="export-excel" class="btn btn-primary toolbarBtn">Export to Excel</button>
+					<button id="export-pdf" class="btn btn-primary toolbarBtn">Export to PDF</button>
+					<!--<button href="https://www.facebook.com/sharer/sharer.php?u=https://www.apsac.org/test-page" target="_blank" class="fa fa-facebook btn btn-primary toolbarBtn"></button>
+					<button href="https://www.twitter.com/share" class="fa fa-twitter btn btn-primary toolbarBtn"></button>
+					<button href="https:///www.linkedin.com/share" class="fa fa-linkedin btn btn-primary toolbarBtn"></button>
+					<button href="https://www.instagram.com/share" class="fa fa-instagram btn btn-primary toolbarBtn"></button>-->
 				</div>
-				<table id="table" data-toolbar="#toolbar" data-detail-formatter="detailFormatter" data-export-types="['excel','pdf']" data-multiple-search="true">
+				<table id="table" data-toolbar="#toolbar" data-search="true" data-detail-formatter="detailFormatter" data-export-types="['excel','pdf']" data-multiple-search="true">
 					<thead>
 						<tr>
-							<th data-checkbox="true"></th>
 							<th data-field="Name of Program" data-sortable="true">Name of Program</th>
 							<th data-field="University name" data-sortable="true">University Name</th>
 							<th data-field="City" data-sortable="true">City</th>
 							<th data-field="State" data-sortable="true">State</th>
-							<th data-field="School Type" data-visible="true">School Type</th>
-							<th data-field="Academic Department" data-sortable="true" data-visible='true'>Academic Department</th>
-							<th data-field="Degree/Certificate Earned" data-sortable="true" data-visible='true'>Degree Earned</th>
-							<th data-field="Certification/Degree Type Available" data-sortable="true" data-visible='true'>Degree/Certification Type</th>
-							<th data-field="Study Options" data-sortable="true" data-visible='true'>Study Options</th>
+							<th data-field="School Type" data-visible="false" data-card-visible="true">School Type</th>
+							<th data-field="Academic Department" data-sortable="true" data-visible='false'>Academic Department</th>
+							<th data-field="Degree/Certificate Earned" data-sortable="true" data-visible='false'>Degree Earned</th>
+							<th data-field="Program Description" data-sortable="true" data-visible='false'>Program Description</th>
+							<th data-field="Certification/Degree Type Available" data-sortable="true" data-visible='false'>Degree/Certification Type</th>
+							<th data-field="Study Options" data-sortable="true" data-visible='false'>Study Options</th>
 						</tr>
 					</thead>
 			</table>
@@ -55,43 +59,43 @@
 			</div>
 		<div id='row' class='table-responsive col-md-2, btn-group-vertical, checkboxDiv'>
 			<img class='smallLogo'src='../lib/APSACLogo.png' height="90px" width='200px'>
-		<div>
-				<button class="btn btn-primary" onclick='toggleBox("states")'>
+		<div class="buttonDiv">
+				<button class="btn btn-primary searchButton" onclick='toggleBox("states")'>
 					Filter by States
 				</button>
 			<ul style="display: none;" class='querybox' id ="states">
 			</ul>
 			</div>
-		<div>
-				<button class="btn btn-primary" onclick='toggleBox("types")'>
+		<div class="buttonDiv">
+				<button class="btn btn-primary searchButton" onclick='toggleBox("types")'>
 					Filter by Types
 				</button>
 			<ul style="display: none;" class='querybox' id="types">
 			</ul>
 		</div>
-		<div>
-				<button class="btn btn-primary" onclick='toggleBox("academic_departments")'>
+		<div class="buttonDiv">
+				<button class="btn btn-primary searchButton" onclick='toggleBox("academic_departments")'>
 					Filter by Departments
 				</button>
 			<ul style="display: none;" class='querybox' id="academic_departments">
 			</ul>
 		</div>
-		<div>
-				<button class="btn btn-primary" onclick='toggleBox("degree_types")'>
+		<div class="buttonDiv">
+				<button class="btn btn-primary searchButton" onclick='toggleBox("degree_types")'>
 					Filter by Degree Types
 				</button>
 			<ul style="display: none;" class='querybox' id="degree_types">
 			</ul>
 		</div>
-		<div>
-				<button class="btn btn-primary" onclick='toggleBox("levels_of_study")'>
+		<div class="buttonDiv">
+				<button class="btn btn-primary searchButton" onclick='toggleBox("levels_of_study")'>
 					Filter by Level of Study
 				</button>
 			<ul style="display: none;" class='querybox' id="levels_of_study">
 			</ul>
 		</div>
-		<div>
-				<button class="btn btn-primary" onclick='toggleBox("study_options")'>
+		<div class="buttonDiv">
+				<button class="btn btn-primary searchButton" onclick='toggleBox("study_options")'>
 					Filter by Study Options
 				</button>
 			<ul style="display: none;" class='querybox' id="study_options">
