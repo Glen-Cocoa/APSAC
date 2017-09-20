@@ -9,6 +9,10 @@ td{
 	word-wrap: normal;
 	white-space: normal;
 }
+tr:hover{
+	background:#7f297d;
+	color:white;
+}
 a{
 	background-color:white;
 }
