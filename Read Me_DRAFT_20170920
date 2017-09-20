@@ -28,8 +28,7 @@ Be sure to keep a backup copy of this project.
 
 
 DEPENDENCIES:
-If reinstalling, several software components (dependencies) need be installed.  Navigate to the directory containing our code.  Type "NPM INSTALL" into the prompt and hit the ENTER key.  This will install all dependencies listed in the package.json file.
-
+All dependancies function via CDN.
 
 AUTHORS: 
 Hanlon, Jason
