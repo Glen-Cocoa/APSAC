@@ -18,7 +18,52 @@ a{
 }
 .btn-primary{
 	background-color:#7F297D;
+	border-color:#000000;
 }
+.searchButton{
+	width: 200px;
+}
+.toolbarBtn{
+	width:120px;
+}
+.buttonDiv{
+	padding:2px;	
+}
+.btn-primary:hover{
+ background-color: #FFFFFF; background-image: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#000000));
+ background-image: -webkit-linear-gradient(top, #FFFFFF, #000000);
+ background-image: -moz-linear-gradient(top, #FFFFFF, #000000);
+ background-image: -ms-linear-gradient(top, #FFFFFF, #000000);
+ background-image: -o-linear-gradient(top, #FFFFFF, #000000);
+ background-image: linear-gradient(to bottom, #FFFFFF, #000000);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#FFFFFF, endColorstr=#000000);
+}	
+/*
+.fa {
+ font-size: 10px;
+ text-align: center;
+ text-decoration: none;
+}
+.fa:hover {
+  opacity: 0.7;
+}
+.fa-facebook {
+	background-color: #3B5998;
+	color: white;
+}
+.fa-twitter {
+	background: #55ACEE;
+	color: white;
+}
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+.fa-instagram {
+  background: #125688;
+	color: white;
+}
+*/
+
 .smallLogo{
 	padding-bottom:10px;
 }
