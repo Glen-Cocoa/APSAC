@@ -27,77 +27,84 @@
 		</div>
 		<div id="container" style="display:none" class="container">
 			<div class="row">
-			<div id='row' class="table-responsive col-md-10, tableDiv">
-				<div class='btn-group' id="toolbar">
-					<button id='clear-search' class='btn btn-primary toolbarBtn'>Reset Search</button>
-					<button id="export" class="btn btn-primary toolbarBtn">Export</button>
-				</div>
-				<table id="table" data-toolbar="#toolbar" data-search="true" data-detail-formatter="detailFormatter" data-export-types="['excel','pdf']" data-multiple-search="true">
-					<thead>
-						<tr>
-							<th data-field="Name of Program" data-sortable="true">Name of Program</th>
-							<th data-field="University name" data-sortable="true">University Name</th>
-							<th data-field="City" data-sortable="true">City</th>
-							<th data-field="State" data-sortable="true">State</th>
-							<th data-field="School Type" data-visible="false" data-card-visible="true">School Type</th>
-							<th data-field="Academic Department" data-sortable="true" data-visible='true'>Academic Department</th>
-							<th data-field="Degree/Certificate Earned" data-sortable="true" data-visible='true'>Degree Earned</th>
-							<th data-field="Program Description" data-sortable="true" data-visible='true'>Program Description</th>
-							<th data-field="Certification/Degree Type Available" data-sortable="true" data-visible='true'>Degree/Certification Type</th>
-							<th data-field="Study Options" data-sortable="true" data-visible='true'>Study Options</th>
-							<th data-field="Program URL" data-visible="true" data-formatter="linkFormatter">Program URL</th>
-						</tr>
-					</thead>
-			</table>
-				<h5 id='banner'>
+				<div id='row' class="table-responsive col-md-10, tableDiv">
+					<div class='btn-group' id="toolbar">
+						<button id='clear-search' class='btn btn-primary toolbarBtn'>Reset Search</button>
+						<button id="export" class="btn btn-primary toolbarBtn">Export</button>
+					</div>
+					<table id="table" data-toolbar="#toolbar" data-search="true" data-detail-formatter="detailFormatter" data-export-types="['excel','pdf']" data-multiple-search="true">
+						<thead>
+							<tr>
+								<th data-field="Name of Program" data-sortable="true">Name of Program</th>
+								<th data-field="University name" data-sortable="true">University Name</th>
+								<th data-field="City" data-sortable="true">City</th>
+								<th data-field="State" data-sortable="true">State</th>
+								<th data-field="School Type" data-visible="false" data-card-visible="true">School Type</th>
+								<th data-field="Academic Department" data-sortable="true" data-visible='true'>Academic Department</th>
+								<th data-field="Degree/Certificate Earned" data-sortable="true" data-visible='true'>Degree Earned</th>
+								<th data-field="Program Description" data-sortable="true" data-visible='true'>Program Description</th>
+								<th data-field="Certification/Degree Type Available" data-sortable="true" data-visible='true'>Degree/Certification Type</th>
+								<th data-field="Study Options" data-sortable="true" data-visible='true'>Study Options</th>
+								<th data-field="Program URL" data-visible="true" data-formatter="linkFormatter">Program URL</th>
+							</tr>
+						</thead>
+					</table>
+					<h5 id='banner'>
 					"All information in this report has been provided by the institution.  Inclusion in this directory does not imply endorsement by APSAC."
-				</h5>
+					</h5>
+				</div>
+			<div id='row' class='table-responsive col-md-2, btn-group-vertical, checkboxDiv'>
+				<img class='smallLogo'src='../lib/APSACLogo.png' height="90px" width='200px'>
+				<div class="buttonDiv">
+					<button class="btn btn-primary searchButton" onclick='toggleBox("states")'>
+						Filter by States
+					</button>
+				<ul style="display: none;" class='querybox' id ="states">
+				</ul>
+				</div>
+				<div class="buttonDiv">
+					<button class="btn btn-primary searchButton" onclick='toggleBox("types")'>
+						Filter by Types
+					</button>
+				<ul style="display: none;" class='querybox' id="types">
+				</ul>
+				</div>
+				<div class="buttonDiv">
+					<button class="btn btn-primary searchButton" onclick='toggleBox("academic_departments")'>
+						Filter by Departments
+					</button>
+				<ul style="display: none;" class='querybox' id="academic_departments">
+				</ul>
+				</div>
+				<div class="buttonDiv">
+					<button class="btn btn-primary searchButton" onclick='toggleBox("degree_types")'>
+						Filter by Degree Types
+					</button>
+				<ul style="display: none;" class='querybox' id="degree_types">
+				</ul>
+				</div>
+				<div class="buttonDiv">
+					<button class="btn btn-primary searchButton" onclick='toggleBox("levels_of_study")'>
+						Filter by Level of Study
+					</button>
+				<ul style="display: none;" class='querybox' id="levels_of_study">
+				</ul>
+				</div>
+				<div class="buttonDiv">
+					<button class="btn btn-primary searchButton" onclick='toggleBox("study_options")'>
+						Filter by Study Options
+					</button>
+				<ul style="display: none;" class='querybox' id="study_options">
+				</ul>
+				</div>
+				<div class="buttonDiv">
+					<button class="btn btn-primary searchButton" onclick='toggleBox("international")'>
+						Filter by International
+					</button>
+					<ul style="display: none;" class='querybox' id="international">
+					</ul>
+				</div>
 			</div>
-		<div id='row' class='table-responsive col-md-2, btn-group-vertical, checkboxDiv'>
-			<img class='smallLogo'src='../lib/APSACLogo.png' height="90px" width='200px'>
-		<div class="buttonDiv">
-				<button class="btn btn-primary searchButton" onclick='toggleBox("states")'>
-					Filter by States
-				</button>
-			<ul style="display: none;" class='querybox' id ="states">
-			</ul>
-			</div>
-		<div class="buttonDiv">
-				<button class="btn btn-primary searchButton" onclick='toggleBox("types")'>
-					Filter by Types
-				</button>
-			<ul style="display: none;" class='querybox' id="types">
-			</ul>
-		</div>
-		<div class="buttonDiv">
-				<button class="btn btn-primary searchButton" onclick='toggleBox("academic_departments")'>
-					Filter by Departments
-				</button>
-			<ul style="display: none;" class='querybox' id="academic_departments">
-			</ul>
-		</div>
-		<div class="buttonDiv">
-				<button class="btn btn-primary searchButton" onclick='toggleBox("degree_types")'>
-					Filter by Degree Types
-				</button>
-			<ul style="display: none;" class='querybox' id="degree_types">
-			</ul>
-		</div>
-		<div class="buttonDiv">
-				<button class="btn btn-primary searchButton" onclick='toggleBox("levels_of_study")'>
-					Filter by Level of Study
-				</button>
-			<ul style="display: none;" class='querybox' id="levels_of_study">
-			</ul>
-		</div>
-		<div class="buttonDiv">
-				<button class="btn btn-primary searchButton" onclick='toggleBox("study_options")'>
-					Filter by Study Options
-				</button>
-			<ul style="display: none;" class='querybox' id="study_options">
-			</ul>
-		</div>
-		</div>
 		</div>
 	</body>
 </html>
