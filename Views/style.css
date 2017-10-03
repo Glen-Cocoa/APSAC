@@ -12,6 +12,9 @@ td{
 a{
 	background-color:white;
 }
+.link{
+	background-color:transparent;
+}
 .btn-primary{
 	background-color:#7F297D;
 	border-color:#000000;
