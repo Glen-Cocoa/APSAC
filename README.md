@@ -31,4 +31,8 @@ DEPENDENCIES:
 All dependancies function via CDN.
 
 AUTHORS: 
-Eli Steiger, Jason Hanlon, Ken McCollum
+Eli Steiger
+
+Jason Hanlon
+
+Ken McCollum
